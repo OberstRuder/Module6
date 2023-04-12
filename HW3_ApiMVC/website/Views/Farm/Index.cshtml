@@ -1,0 +1,36 @@
+﻿@using HW2_website.Models;
+@model List<Farm>
+
+<h2>Farm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kind Of Animal</th>
+            <th>Name</th>
+            <th>Weight</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var farm in Model)
+        {
+            <tr>
+                <td>@farm.Id</td>
+                <td>@farm.KindOfAnimal</td>
+                <td>@farm.Name</td>
+                <td>@farm.Weight</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = farm.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = farm.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = farm.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

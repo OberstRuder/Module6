@@ -1,0 +1,26 @@
+﻿@using HW2_website.Models;
+@model Farm
+
+<h2>Delete Farm</h2>
+
+<div>
+    <h4>Farm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Id</dt>
+        <dd>@Model.Id</dd>
+        <dt>Kind Of Animal</dt>
+        <dd>@Model.KindOfAnimal</dd>
+        <dt>Name</dt>
+        <dd>@Model.Name</dd>
+        <dt>Weight</dt>
+        <dd>@Model.Weight</dd>
+    </dl>
+
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-default">Back to List</a>
+        </div>
+    </form>
+</div>
